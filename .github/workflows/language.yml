@@ -18,13 +18,22 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      - name: Validate languages token
+        env:
+          GH_STATS_TOKEN: ${{ secrets.GH_STATS_TOKEN }}
+        run: |
+          if [ -z "$GH_STATS_TOKEN" ]; then
+            echo "::error::Create the GH_STATS_TOKEN repository secret with a PAT that has repo and read:user access."
+            exit 1
+          fi
+
       - name: generate languages.svg
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: username=${{ github.repository_owner }}&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false
+          options: username=${{ github.repository_owner }}&count_private=true&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false
           path: dist/languages.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_STATS_TOKEN }}
 
 
       - name: push languages.svg to the output branch
