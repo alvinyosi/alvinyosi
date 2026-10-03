@@ -70,7 +70,7 @@
 
 <div data-importer="stats" align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=alvinyosi&show_icons=true&include_all_commits=true&theme=dracula&locale=en&hide_border=false&border_color=e4e2e2" width="49%" alt="GitHub stats" />
-  <img src="https://raw.githubusercontent.com/alvinyosi/alvinyosi/languages-output/languages.svg" width="49%" alt="Most used languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=alvinyosi&layout=compact&langs_count=5&theme=dracula&hide_border=false" width="49%" alt="Most used languages" />
 </div>
 
 ###
